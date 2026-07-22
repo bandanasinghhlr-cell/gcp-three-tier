@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Student Form</h2>
+
+<form action="/add" method="POST">
+
+<div class="row">
+
+<div class="col-md-5">
+
+<input
+type="text"
+name="name"
+class="form-control"
+placeholder="Enter Name"
+required>
+
+</div>
+
+<div class="col-md-5">
+
+<input
+type="email"
+name="email"
+class="form-control"
+placeholder="Enter Email"
+required>
+
+</div>
+
+<div class="col-md-2">
+
+<button class="btn btn-success w-100">
+
+Save
+
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+<hr>
+
+<table class="table table-bordered mt-4">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for student in students %}
+
+<tr>
+
+<td>{{ student.name }}</td>
+
+<td>{{ student.email }}</td>
+
+<td>
+
+<a href="/edit/{{ student._id }}" class="btn btn-warning btn-sm">
+
+Edit
+
+</a>
+
+<a href="/delete/{{ student._id }}" class="btn btn-danger btn-sm">
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}
