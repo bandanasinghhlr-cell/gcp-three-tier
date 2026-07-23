@@ -36,6 +36,8 @@ jobs:
       - name: Run Pytest
         env:
           PYTHONPATH: .
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+          DATABASE: ${{ secrets.DATABASE }}
         run: |
           pytest
 
