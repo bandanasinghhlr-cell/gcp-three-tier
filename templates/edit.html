@@ -2,34 +2,108 @@
 
 {% block content %}
 
-<h2>Edit Student</h2>
+<div class="row justify-content-center">
+
+<div class="col-lg-8">
+
+<div class="card glass-card shadow-lg border-0">
+
+<div class="card-body">
+
+<h2 class="mb-4 text-center">
+
+<i class="bi bi-pencil-square"></i>
+
+Edit Student
+
+</h2>
 
 <form action="/update/{{ student._id }}" method="POST">
+
+<div class="row g-3">
+
+<div class="col-md-6">
+
+<label class="form-label">Full Name</label>
 
 <input
 type="text"
 name="name"
 value="{{ student.name }}"
-class="form-control mb-3">
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-6">
+
+<label class="form-label">Email</label>
 
 <input
 type="email"
 name="email"
 value="{{ student.email }}"
-class="form-control mb-3">
+class="form-control"
+required>
 
-<button class="btn btn-primary">
+</div>
 
-Update
+<div class="col-md-6">
 
-</button>
+<label class="form-label">City</label>
+
+<input
+type="text"
+name="city"
+value="{{ student.city }}"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-6">
+
+<label class="form-label">Phone Number</label>
+
+<input
+type="text"
+name="phone"
+value="{{ student.phone }}"
+class="form-control"
+required>
+
+</div>
+
+</div>
+
+<div class="mt-4 d-flex justify-content-between">
 
 <a href="/" class="btn btn-secondary">
+
+<i class="bi bi-arrow-left"></i>
 
 Back
 
 </a>
 
+<button class="btn btn-primary">
+
+<i class="bi bi-check-circle"></i>
+
+Update Student
+
+</button>
+
+</div>
+
 </form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 {% endblock %}
